@@ -216,13 +216,16 @@ const ageCurrentDate = document.getElementById('ageCurrentDate').value;
 const ageSubmit = document.getElementById('ageSubmit');
 const ageResult = document.getElementById('ageResult');
 
+const ageInputMess = document.getElementById('ageInputMess')
+
 
 
 
 ageSubmit.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    let showBirth = new Date(ageBirthDate);
+    
+
     let ageBirth = new Date(ageBirthDate).getTime();
     let ageCalDate = new Date(ageCurrentDate).getTime();
 
