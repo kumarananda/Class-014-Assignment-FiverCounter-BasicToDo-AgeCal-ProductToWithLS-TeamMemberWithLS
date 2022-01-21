@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+    <!-- 001 Order Counter Start -->
+    <section class="fiver-timeline w-50 mx-auto mt-5 p-5 bg-light">
+        <h3>Order Counter</h3>
+        <div class="fiver-wraper">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-inline fiver-wraper-flex" id="fiver_order">
+                        <div class="form-group">
+                            <input id="fiverdate" type="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="fiverTime" type="time" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="fOrder" type="submit" class="btn btn-primary" value="creat an order">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="counter">
+                <!-- <span id="day">DD</span>
+                <span id="hour">HH</span>
+                <span id="min">MM</span>
+                <span id="sec">SS</span> -->
+            </div>
+            <div class="countCom"></div>
+        </div>
+    </section>
+    <!-- 001 Order Counter end -->
+
+    <!-- 002 Bsic ToDo Start -->
+    <section class="do-timeline w-50 mx-auto mt-5 p-5 bg-light">
+        <h3>Basic ToDo App</h3>
+        <div class="do-wraper wrap">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-inline do-wraper-flex" id="do_form">
+                        <div class="form-group">
+                            <input name="do-name" type="text" class="form-control" placeholder="Do name">
+                        </div>
+                        <div class="form-group">
+                        <select name="opt" id="" class="form-control">
+                            <option value="">--select--</option>
+                            <option value="Importent">Importent</option>
+                            <option value="Not importent">Not importent</option>
+                            <option value="Unnecessary">Unnecessary</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Add">
+                        </div>
+                    </form>
+                    <hr>
+                    <ul id="list_group" class="list_group">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 002 Bsic ToDo End -->
+
+    <!-- 003 Product ToDo with LocalStorage Start -->
+    <section class="addToDo w-50 mx-auto mt-5 p-5 bg-light">
+        <h3>Product ToDo with LocalStorage</h3>
+        <div class="container">
+            <div class="row justify-content-center my-5">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" id="add_new">Add New Product</button>
+                    <br>
+                    <br>
+                    <div class="card productAddBox">
+                        <div class="card-body">
+                            <button  id="endButton" class="close">&times;</button>
+                            <h2>Add New Product</h2>
+                        <hr>
+                        <form id="product" action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Product Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Product Price">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Sale Price">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Photo Link">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-block" value="Add Product">
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="product">
+                <div id="pList" class="row">
+                    
+                    <!-- <div class="col-md-3 my-3">
+                        <div class="card">
+                            <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU" alt="">
+                            <div class="card-body">
+                                <h3>Product Name</h3>
+                                <p><span class="regular-price">$200</span><span class="sale-price">$150</span></p>
+
+                                <br>
+                                <button class="btn btn-success">Add to cart</button>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 003 Product ToDo with LocalStorage End -->
+
+
+
+
+
+
+
+
+
+    
+    <script src="function.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
