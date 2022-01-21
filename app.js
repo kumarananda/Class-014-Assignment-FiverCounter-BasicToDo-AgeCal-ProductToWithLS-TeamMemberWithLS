@@ -18,6 +18,8 @@ fiver_order.addEventListener('submit', function (e) {
     let end_timeAbs = new Date(date + " " + time);
     let time_diffAbs = end_timeAbs.getTime() - start_timeAbs.getTime() ;
 
+    console.log(time_diffAbs);
+
     if( time_diffAbs < 0){
         // clearInterval();
         counter.innerHTML = `<p>Preivious date will not counted</p>`;
@@ -138,7 +140,7 @@ const pList = document.getElementById('pList')
 const endButton = document.getElementById('endButton');
 
 const regular_price = document.querySelectorAll('.regular_price');
-console.log(regular_price);
+// console.log(regular_price);
 
 
 add_new.addEventListener('click', () => {
@@ -204,3 +206,76 @@ gotLSData.map((data) => {
     `
 });
 // 003 Product ToDo with LocalStorage End
+
+// 004 Age Calculator start
+
+const ageName = document.getElementById('ageName').value;
+const ageBirthDate = document.getElementById('ageBirthDate').value;
+const ageCurrentDate = document.getElementById('ageCurrentDate').value;
+
+const ageSubmit = document.getElementById('ageSubmit');
+const ageResult = document.getElementById('ageResult');
+
+
+
+
+ageSubmit.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let showBirth = new Date(ageBirthDate);
+    let ageBirth = new Date(ageBirthDate).getTime();
+    let ageCalDate = new Date(ageCurrentDate).getTime();
+
+    let ageTDiff =  ageCalDate - ageBirth ;
+
+    let liMo = 30.4375; // per four year 1461 as par month's days value
+    let fullseconds = Math.floor(ageTDiff / 1000); 
+    let fullminutes = Math.floor(fullseconds / 60);  
+    let fullhours = Math.floor(fullminutes / 60); 
+    let fulldays = Math.floor(fullhours / 24); 
+    let fullweeks = Math.floor(fulldays / 7); 
+    let fullmonths = Math.floor(fulldays / liMo ); 
+    let years = Math.floor(fullmonths / 12);  
+    // year get net value after useing Math.abs
+
+    let ageNetmonths = fullmonths - (years * 12) ;
+    // let ageNetweeks = fullweeks - (years * 52) - 
+    let ageNetdays = fulldays - (years * 12 * liMo) - (ageNetmonths * liMo);
+    let ageNethours = fullhours - (years * 12 * liMo * 24) - (ageNetmonths * liMo * 24) - (ageNetdays * 24);
+    let ageNetminutes = fullminutes - (years * 12 * liMo * 24 * 60) - (ageNetmonths * liMo * 24 * 60) - (ageNetdays * 24 * 60 ) - (ageNethours * 60);
+    let ageNetseconds = fullseconds - (years * 12 * liMo * 24 * 60 * 60) - (ageNetmonths * liMo * 24 * 60 *60) - (ageNetdays * 24 * 60 * 60) - (ageNethours * 60 * 60) - (ageNetminutes * 60);
+
+
+
+    ageResult.innerHTML = `
+    <div class="card-header">
+    <h4 >Hi ${ageName}</h4>
+    
+    </div>
+    <div class="card-body">
+        <span>Your Age Details is bellow</span>
+        <h3 class="card-title">Your date of Birth is #BrithDate</h3>
+        <span class="d-block mt-2">Age:</span>
+        <span class="d-block mt-2">${years} years ${ageNetmonths} months ${Math.floor(ageNetdays)} days</span>
+        <span class="d-block mt-2">or ${0}261 months ${0}2 days</span>
+        <span class="d-block mt-2">or ${0}1135 weeks ${0}2 days</span>
+        <span class="d-block mt-2">or ${fulldays} days</span>
+        <span class="d-block mt-2">or ${fullhours} hours</span>
+        <span class="d-block mt-2">or ${fullminutes} minutes</span>
+        <span class="d-block mt-2">or ${fullseconds} seconds</span>
+    </div>
+    <div class="card-footer agewelMess">
+        <span>${ageName}, Thanks for using our App</span>
+    </div>
+    `;
+
+
+
+    console.log(years + " " + ageNetmonths + " " + ageNetdays +
+     " " + ageNethours + " " + ageNetminutes + " " + ageNetseconds );
+     console.log(fullmonths);
+
+
+    
+
+});
