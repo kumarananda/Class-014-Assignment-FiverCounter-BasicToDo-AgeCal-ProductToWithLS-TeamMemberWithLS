@@ -256,13 +256,20 @@ ageSubmit.addEventListener('submit', function (e) {
     console.log(extdayforWeak);
 
     ageResult.innerHTML = `
-        <div class="card-header">
+        <div class="card-body bg-info">
+        <h2 class="card-title">Hi ${ageName} Your Result on progress.....</h2>
+        </div>
+    `;
+
+    let ageCalResult = setTimeout( () => {
+        ageResult.innerHTML = `
+        <div class="card-header bg-primary text-white">
         <h4 >Hi ${ageName}</h4>
         
         </div>
-        <div class="card-body">
+        <div class="card-body bg-success text-white">
             <span>Your Age Details is bellow</span>
-            <h3 class="card-title">Your date of Birth is #BrithDate</h3>
+            <h3 class="card-title">Your date of Birth is ${ageBirthDate}</h3>
             <span class="d-block mt-2">Age:</span>
             <span class="d-block mt-2">${years} years ${ageNetmonths} months ${Math.floor(ageNetdays)} days</span>
             <span class="d-block mt-2">or ${extmonthCal} months ${extdayforMonth} days</span>
@@ -272,10 +279,14 @@ ageSubmit.addEventListener('submit', function (e) {
             <span class="d-block mt-2">or ${fullminutes} minutes</span>
             <span class="d-block mt-2">or ${fullseconds} seconds</span>
         </div>
-        <div class="card-footer agewelMess">
+        <div class="card-footer agewelMess bg-info text-white">
             <span>${ageName}, Thanks for using our App</span>
         </div>
     `;
+
+    },2000);
+
+
 
 
     
