@@ -267,6 +267,8 @@ ageSubmit.addEventListener('submit', function (e) {
         // for weak and days result
         let extweakCal = Math.floor(  ((((ageTDiff / 1000)/ 60)/60)/24)/7   ) ; // 52
         let extdayforWeak = Math.floor( extDayCal - ( extweakCal * 7 )   );
+
+
         
         console.log(extdayforWeak);
 
@@ -318,3 +320,4 @@ ageSubmit.addEventListener('submit', function (e) {
     
 
 });
+// 004 Age Calculator End 
