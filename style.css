@@ -38,6 +38,11 @@ margin: 200px auto;
 
 .productAddBox{
     display: none;
+    
+}
+
+.regular_price {
+	text-decoration: line-through;
 }
 /* 003 Product ToDo with LocalStorage End */
 

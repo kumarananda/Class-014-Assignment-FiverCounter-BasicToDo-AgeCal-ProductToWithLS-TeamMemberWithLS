@@ -9,35 +9,35 @@ function zero(valeu) {
 
 
 // 003 Product ToDo with LocalStorage Start
-// function zero(valeu) {
-//     return valeu < 10 ? '0'+ valeu : valeu;
-// };
-
 /**
- * Data send to localstorage
+ * 
  * @param {*} key 
- * @param {*} arr 
+ * @param {*} arry 
  */
-
-
-function datasend(key , arr){
-    let data = JSON.stringify(arr);
-    localStorage.setItem(key, data);
-    return true;
+function sendDataToLS(key, arry) {
+    let data = JSON.stringify(arry);
+    localStorage.setItem(key, data)
 };
-
 /**
- * gate data from localstorage
+ * 
  * @param {*} key 
  * @returns 
  */
-function dataget(key) {
-    let data = localStorage.getItem(key);
-    return JSON.parse(data)
-}
-
-function salePffun(){
+function getItemFromLS(key) {
+    let data = localStorage.getItem(key)
+    return data ? JSON.parse(data) : false;
     
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // 003 Product ToDo with LocalStorage End

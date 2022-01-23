@@ -250,77 +250,131 @@ ageSubmit.addEventListener('submit', function (e) {
 
 
 // 003 Product ToDo with LocalStorage Start
-const add_new = document.getElementById('add_new');
+
 const productAddBox = document.querySelector('.productAddBox');
+const add_new = document.getElementById('add_new');
 
-const pList = document.getElementById('pList')
+const fromClose = document.getElementById('fromClose');
+const pList = document.getElementById('pList');
 
-const endButton = document.getElementById('endButton');
-
-const regular_price = document.querySelectorAll('.regular_price');
-// console.log(regular_price);
+const product = document.getElementById('product');
 
 
-add_new.addEventListener('click', () => {
-    productAddBox.style.display = "block"
+
+
+
+
+
+add_new.addEventListener('click', function (e) {
+    productAddBox.style.display = 'block';
 });
 
-endButton.addEventListener('click', () => {
-    productAddBox.style.display = "none"
-})
+fromClose.addEventListener('click', function (e) {
+    productAddBox.style.display = 'none';
+});
 
+product.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let name = this.querySelector('input[name="name"]').value;
+    let rPrice = this.querySelector('input[name="rPrice"]').value;
+    let sPrice = this.querySelector('input[name="sPrice"]').value;
+    let photo = this.querySelector('input[name="photo"]').value;
+
+
+    let product_arry;
+    if(getItemFromLS('Product')){
+        product_arry = getItemFromLS('Product')
+    }else{
+        product_arry = [];
+    }
+
+    product_arry.push({
+        name : name,
+        price : rPrice,
+        sale : sPrice,
+        photo : photo
+
+    });
+
+    sendDataToLS('Product', product_arry)
+
+ 
+
+    allproduct();
+
+
+});
+
+allproduct();
+
+function allproduct() {
+    
+productLS.map(data => {
+    let productLS = getItemFromLS('Product');
+    pList.innerHTML += `
+    <div class="col-md-3 my-3">
+        <div class="card">
+            <img class="card-image" src="${data.photo}" alt="">
+            <div class="card-body">
+                <h3>${data.name}</h3>
+                <p>Regular Price 
+                    <span class="regular_price"> ${data.price}</span>
+                    <br>
+                    Sale Price 
+                    <span class="sale_price"> ${data.sale}</span>
+                </p>
+
+                <br>
+                <button class="btn btn-success">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    
+    `;
+    
+});
+}
+
+// Array
 const products = [
     {
-        name     : 'T-Shirt',
-        price    : 121,
-        sale     : 91,
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+        name     : 'Alu',
+        price    : 40,
+        sale     : 25,
+        photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400818_U1.jpg"
     },
     {
-        name     : 'T-Shirt',
-        price    : 122,
+        name     : 'Kumra',
+        price    : 60,
         sale     : "",
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/kumra.jpg"
     },
     {
-        name     : 'T-Shirt',
-        price    : 123,
-        sale     : 93,
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+        name     : 'Soyabin Tal 5L',
+        price    : 500,
+        sale     : 450,
+        photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400078_U.jpg"
     },
     {
-        name     : 'T-Shirt',
-        price    : 124,
+        name     : 'Papaya',
+        price    : 100,
         sale     : "",
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
+    },
+    {
+        name     : 'Papaya',
+        price    : 100,
+        sale     : 80,
+        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
     }
 ];
 
-let productData = JSON.stringify(product);
-localStorage.setItem('product', productData);
+//  sendDataToLS('Product', products);
 
-datasend('product', products);
-// send data to LS with function
 
-let gotLSData = dataget('product');
 
-gotLSData.map((data) => {
-    // console.log(data.name);
-    pList.innerHTML +=`
 
-        <div class="col-md-3 my-3">
-            <div class="card">
-                <img class="card-image" src="${data.photo}">
-                <div class="card-body">
-                    <h3>${data.name}</h3>
-                    <p><span class="regular_price">RegP- ${data.price}</span><span class="sale-price ml-3">SaleP- ${data.sale == "" ? data.price : data.sale}</span></p>
 
-                    <br>
-                    <button class="btn btn-success">Add to cart</button>
-                </div>
-            </div>
-        </div>
-    
-    `
-});
 // 003 Product ToDo with LocalStorage End
+
+// 31:53
