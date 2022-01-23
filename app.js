@@ -131,81 +131,7 @@ do_form.addEventListener('submit', function(e) {
  /* 002 Bsic ToDo End  */
 
  
-// 003 Product ToDo with LocalStorage Start
-const add_new = document.getElementById('add_new');
-const productAddBox = document.querySelector('.productAddBox');
 
-const pList = document.getElementById('pList')
-
-const endButton = document.getElementById('endButton');
-
-const regular_price = document.querySelectorAll('.regular_price');
-// console.log(regular_price);
-
-
-add_new.addEventListener('click', () => {
-    productAddBox.style.display = "block"
-});
-
-endButton.addEventListener('click', () => {
-    productAddBox.style.display = "none"
-})
-
-const products = [
-    {
-        name     : 'T-Shirt',
-        price    : 121,
-        sale     : 91,
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
-    },
-    {
-        name     : 'T-Shirt',
-        price    : 122,
-        sale     : "",
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
-    },
-    {
-        name     : 'T-Shirt',
-        price    : 123,
-        sale     : 93,
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
-    },
-    {
-        name     : 'T-Shirt',
-        price    : 124,
-        sale     : "",
-        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
-    }
-];
-
-let productData = JSON.stringify(product);
-localStorage.setItem('product', productData);
-
-datasend('product', products);
-// send data to LS with function
-
-let gotLSData = dataget('product');
-
-gotLSData.map((data) => {
-    // console.log(data.name);
-    pList.innerHTML +=`
-
-        <div class="col-md-3 my-3">
-            <div class="card">
-                <img class="card-image" src="${data.photo}">
-                <div class="card-body">
-                    <h3>${data.name}</h3>
-                    <p><span class="regular_price">RegP- ${data.price}</span><span class="sale-price ml-3">SaleP- ${data.sale == "" ? data.price : data.sale}</span></p>
-
-                    <br>
-                    <button class="btn btn-success">Add to cart</button>
-                </div>
-            </div>
-        </div>
-    
-    `
-});
-// 003 Product ToDo with LocalStorage End
 
 // 004 Age Calculator start
 
@@ -321,3 +247,80 @@ ageSubmit.addEventListener('submit', function (e) {
 
 });
 // 004 Age Calculator End 
+
+
+// 003 Product ToDo with LocalStorage Start
+const add_new = document.getElementById('add_new');
+const productAddBox = document.querySelector('.productAddBox');
+
+const pList = document.getElementById('pList')
+
+const endButton = document.getElementById('endButton');
+
+const regular_price = document.querySelectorAll('.regular_price');
+// console.log(regular_price);
+
+
+add_new.addEventListener('click', () => {
+    productAddBox.style.display = "block"
+});
+
+endButton.addEventListener('click', () => {
+    productAddBox.style.display = "none"
+})
+
+const products = [
+    {
+        name     : 'T-Shirt',
+        price    : 121,
+        sale     : 91,
+        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+    },
+    {
+        name     : 'T-Shirt',
+        price    : 122,
+        sale     : "",
+        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+    },
+    {
+        name     : 'T-Shirt',
+        price    : 123,
+        sale     : 93,
+        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+    },
+    {
+        name     : 'T-Shirt',
+        price    : 124,
+        sale     : "",
+        photo    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdXrdglpBZLxfb7ZlD6ThFr04uu0ZjPePSQ&usqp=CAU"
+    }
+];
+
+let productData = JSON.stringify(product);
+localStorage.setItem('product', productData);
+
+datasend('product', products);
+// send data to LS with function
+
+let gotLSData = dataget('product');
+
+gotLSData.map((data) => {
+    // console.log(data.name);
+    pList.innerHTML +=`
+
+        <div class="col-md-3 my-3">
+            <div class="card">
+                <img class="card-image" src="${data.photo}">
+                <div class="card-body">
+                    <h3>${data.name}</h3>
+                    <p><span class="regular_price">RegP- ${data.price}</span><span class="sale-price ml-3">SaleP- ${data.sale == "" ? data.price : data.sale}</span></p>
+
+                    <br>
+                    <button class="btn btn-success">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    
+    `
+});
+// 003 Product ToDo with LocalStorage End
