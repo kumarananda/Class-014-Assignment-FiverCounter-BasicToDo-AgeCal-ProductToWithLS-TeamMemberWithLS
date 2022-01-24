@@ -262,9 +262,6 @@ const product = document.getElementById('product');
 
 
 
-
-
-
 add_new.addEventListener('click', function (e) {
     productAddBox.style.display = 'block';
 });
@@ -272,6 +269,12 @@ add_new.addEventListener('click', function (e) {
 fromClose.addEventListener('click', function (e) {
     productAddBox.style.display = 'none';
 });
+
+
+
+
+
+
 
 product.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -282,8 +285,8 @@ product.addEventListener('submit', function (e) {
 
 
     let product_arry;
-    if(getItemFromLS('Product')){
-        product_arry = getItemFromLS('Product')
+    if(getItemFromLS('product')){
+        product_arry = getItemFromLS('product')
     }else{
         product_arry = [];
     }
@@ -295,86 +298,123 @@ product.addEventListener('submit', function (e) {
         photo : photo
 
     });
+    
+    sendDataToLS('product', product_arry);
 
-    sendDataToLS('Product', product_arry)
-
- 
-
-    allproduct();
+    allProducts();
 
 
 });
 
-allproduct();
 
-function allproduct() {
+allProducts();
+
+function allProducts() {
     
-productLS.map(data => {
-    let productLS = getItemFromLS('Product');
-    pList.innerHTML += `
-    <div class="col-md-3 my-3">
-        <div class="card">
-            <img class="card-image" src="${data.photo}" alt="">
-            <div class="card-body">
-                <h3>${data.name}</h3>
-                <p>Regular Price 
-                    <span class="regular_price"> ${data.price}</span>
-                    <br>
-                    Sale Price 
-                    <span class="sale_price"> ${data.sale}</span>
-                </p>
+    let productLS = getItemFromLS('product'); 
 
-                <br>
-                <button class="btn btn-success">Add to cart</button>
+    let data = '';
+
+    productLS.map(pdata => {
+        data += `
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img class="card-image" src="${pdata.photo}" alt="">
+                <div class="card-body">
+                    <h3>${pdata.name}</h3>
+                    <p>Regular Price 
+                        <span class="regular_price"> ${pdata.price}</span>
+                        <br>
+                        Sale Price 
+                        <span class="sale_price"> ${pdata.sale}</span>
+                    </p>
+        
+                    <br>
+                    <button class="btn btn-success">Add to cart</button>
+                </div>
             </div>
         </div>
-    </div>
-    
-    `;
-    
-});
+        
+        `;
+    })
+    // console.log(data);
+    pList.innerHTML = data;
+
+
 }
 
-// Array
-const products = [
-    {
-        name     : 'Alu',
-        price    : 40,
-        sale     : 25,
-        photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400818_U1.jpg"
-    },
-    {
-        name     : 'Kumra',
-        price    : 60,
-        sale     : "",
-        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/kumra.jpg"
-    },
-    {
-        name     : 'Soyabin Tal 5L',
-        price    : 500,
-        sale     : 450,
-        photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400078_U.jpg"
-    },
-    {
-        name     : 'Papaya',
-        price    : 100,
-        sale     : "",
-        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
-    },
-    {
-        name     : 'Papaya',
-        price    : 100,
-        sale     : 80,
-        photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
-    }
-];
-
-//  sendDataToLS('Product', products);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const products = [
+//     {
+//         name     : 'Alu',
+//         price    : 40,
+//         sale     : 25,
+//         photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400818_U1.jpg"
+//     },
+//     {
+//         name     : 'Kumra',
+//         price    : 60,
+//         sale     : "",
+//         photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/kumra.jpg"
+//     },
+//     {
+//         name     : 'Soyabin Tal 5L',
+//         price    : 500,
+//         sale     : 450,
+//         photo    : "https://swopnerbazar.com/wp-content/uploads/2017/06/2400078_U.jpg"
+//     },
+//     {
+//         name     : 'Papaya',
+//         price    : 100,
+//         sale     : "",
+//         photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
+//     },
+//     {
+//         name     : 'Papaya',
+//         price    : 100,
+//         sale     : 80,
+//         photo    : "https://swopnerbazar.com/wp-content/uploads/2021/12/pepe.jpg"
+//     }
+// ];
+
+// sendDataToLS('product', products);
 
 
 // 003 Product ToDo with LocalStorage End
 
-// 31:53
