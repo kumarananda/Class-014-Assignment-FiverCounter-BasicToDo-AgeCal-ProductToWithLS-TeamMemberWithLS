@@ -299,17 +299,26 @@ product.addEventListener('submit', function (e) {
         product_arry = [];
     }
 
-    product_arry.push({
+    product_arry.unshift({
         name : name,
         price : rPrice,
         sale : sPrice,
         photo : photo
 
     });
+    // product_arry.push({
+    //     name : name,
+    //     price : rPrice,
+    //     sale : sPrice,
+    //     photo : photo
+
+    // });
     
     sendDataToLS('product', product_arry);
 
     allProducts();
+
+    product.value.textContent= '';
 
 
 });
