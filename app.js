@@ -144,8 +144,16 @@ const ageResult = document.getElementById('ageResult');
 
 const ageInputMess = document.getElementById('ageInputMess')
 
+const ageNamegg = document.getElementById('ageName');
 
-
+ageNamegg.addEventListener('blur', () => {
+    if(ageNamegg.value == ''){
+        ageNamegg.style.border = '1px solid red';
+    }else{
+        ageNamegg.style.border = '';
+    }
+    
+})
 
 ageSubmit.addEventListener('submit', function (e) {
     e.preventDefault();
