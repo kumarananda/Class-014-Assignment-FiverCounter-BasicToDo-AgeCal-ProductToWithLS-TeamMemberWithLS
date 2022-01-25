@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
 
     <link rel="stylesheet" href="style.css">
@@ -43,6 +46,7 @@
     </section>
     <!-- 001 Order Counter end -->
 
+
     <!-- 002 Bsic ToDo Start -->
     <section class="do-timeline w-50 mx-auto mt-5 p-5 bg-light">
         <h3>Basic ToDo App</h3>
@@ -76,9 +80,7 @@
     <!-- 002 Bsic ToDo End -->
 
 
-
-
-    <!-- 004 Age Calculator Start -->
+    <!-- 003 Age Calculator Start -->
     <section class="ageCalSection  mx-auto mt-5 p-5 bg-light text-center">
         <h3 >Age Calculator </h3>
         <div class="container">
@@ -152,9 +154,9 @@
             </div>
         </div>
     </section>
-    <!-- 004 Age Calculator End -->
+    <!-- 003 Age Calculator End -->
 
-    <!-- 003 Product ToDo with LocalStorage Start -->
+    <!-- 004 Product ToDo with LocalStorage Start -->
     <section class="addToDo justify-content-center  mx-auto mt-5  bg-light">
         <h3 class="text-center">Product ToDo with LocalStorage</h3>
         <div class="container">
@@ -208,12 +210,10 @@
         </div>          
     </section>
 
+    <!-- 004 Product ToDo with LocalStorage End -->
 
 
-    <!-- 003 Product ToDo with LocalStorage End -->
-
-
-    <!-- 003 Tesm Member with LocalStorage Start-->
+    <!-- 005 Tesm Member with LocalStorage Start-->
     <section class="teamMember">
         <div class="container">
             <div class="row">
@@ -221,51 +221,84 @@
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Add Devs</h2>
-                            <hr>
-                            <form action="">
+                            <h3 class="bborder">Add Devs</h3>
+                            <form id="devsform" >
                                 <div class="form-group">
                                     <label for="devsName"></label>
-                                    <input id="devsName" type="text" class="form-control" placeholder="Name">
+                                    <input name="name" id="devsName" type="text" class="form-control" placeholder="Name">
                                 </div>
                                 <div class="form-group">
-                                    Skills
-                                    <br>
-                                    <input name="" type="checkbox" value="Laravel Developer" id="Laravel"><label for="Laravel">Laravel Developer</label><br>
-                                    <input name="" type="checkbox" value="React Developer" id="React"><label for="React">React Developer</label><br>
-                                    <input name="" type="checkbox" value="IOS Developer" id="IOS"><label for="IOS">IOS Developer</label><br>
-                                    <input name="" type="checkbox" value="Python Developer" id="Python"><label for="Python">Python Developer</label><br>
+                                    <span>Skills</span><br>
+                                    <input name="skill" type="checkbox" value="Laravel Developer" id="Laravel"> <label for="Laravel">Laravel Developer</label><br>
+                                    <input name="skill" type="checkbox" value="React Developer" id="React"> <label for="React">React Developer</label><br>
+                                    <input name="skill" type="checkbox" value="IOS Developer" id="IOS"> <label for="IOS">IOS Developer</label><br>
+                                    <input name="skill" type="checkbox" value="Python Developer" id="Python"> <label for="Python">Python Developer</label><br>
                                 </div>
                                 <div class="form-group">
-                                    Gender
-                                    <br>
-                                    <input name="gender" type="radio" value="Female" id="Female"><label for="Female">Female Developer</label><br>
-                                    <input name="gender" type="radio" value="Male" id="Male"><label for="Male">Male Developer</label><br>
+                                    <span>Gender</span><br>
+                                    <input name="gender" type="radio" value="Female" id="Female"> <label for="Female">Female</label><br>
+                                    <input name="gender" type="radio" value="Male" id="Male"> <label for="Male">Male</label><br>
                                 </div>
                                 <div class="form-group">
-                                    <label for="devsPhoto"></label>
-                                    <input id="devsPhoto" type="text" class="form-control" placeholder="Photo">
+                                    <input name="photo" type="text" class="form-control" placeholder="Photo">
                                 </div>
                                 <div class="form-group">
-                                    <br>
+                                    <h6>Contacts links</h6>
+                                    <input name="flinks" type="text" id="fb" placeholder="Input Facebook link" class="form-control">
+                                    <input name="tlinks" type="text" id="twt" placeholder="Input Twitter link" class="form-control">
+                                    <input name="llinks" type="text" id="li" placeholder="Input LinkedIn link" class="form-control">
+                                    <input name="elinks" type="text" id="em" placeholder="Input Email Address" class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <input  type="submit" class="btn btn-primary btn-block" value="Add Devs">
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 teamMembers">
+                    <div id="devesitems" class="row">
+
+                        <!-- <div class="col-lg-4 my-2">
+                            <div class="card">
+                                <img style="width: 100%; height: 200px; object-fit: cover;" class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ruMQInU6x-AXR8f7nB8u6sqNHFOYdX8YVg9vK3DUEiolnt0daIupAQmdMWBOf8MnDo0&usqp=CAU" alt="">
+                                <div class="card-body devs-card">
+                                    <h4>#Devs Name</h4>
+                                    <p class="devs-gender">Gender: #Male</p>
+                                    <h6>Skills</h6>
+                                    
+                                    <ul class="list-group">
+                                        <li class="list-group-item">#Javascript</li>
+                                    </ul>
+                                    <span>
+                                        <ul class="team-so-ic">
+                                            <li><a href="#" class="fa fa-facebook"></a></li>
+                                            <li><a href="#" class="fa fa-twitter"></a></li>
+                                            <li><a href="#" class="fa fa-linkedin"></a></li>
+                                            <li><a href="#" class="fa fa-envelope"></a></li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
-    <!-- 09:45 -->
+    <!-- 005 Tesm Member with LocalStorage End-->
+    
 
 
     
     <script src="function.js"></script>
-    <script src="app.js"></script>
+    <script src="app001.js"></script>
+    <script src="app002.js"></script>
+    <script src="app003.js"></script>
+    <script src="app004.js"></script>
+    <script src="app005.js"></script>
     
 </body>
 </html>

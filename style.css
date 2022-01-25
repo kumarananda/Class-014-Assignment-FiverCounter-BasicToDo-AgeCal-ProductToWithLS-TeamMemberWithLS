@@ -2,13 +2,28 @@
 
 
 /* 001 Order Counter Start  */
-
+.counter {
+	padding: 3px;
+	text-align: center;
+	font-size: 52px;
+	font-weight: 700;
+}
+.countCom p {
+	font-size: 40px;
+	text-align: center;
+}
+.fiver-timeline h3 {
+	text-align: center;
+}
 /* 001 Order Counter End  */
 
  /* 002 Bsic ToDo Start  */
- .wrap{
+.wrap{
     width: 600px;
     margin: 50px auto;
+}
+.do-timeline h3 {
+	text-align: center;
 }
 /* .do-timeline{
 
@@ -32,20 +47,66 @@
 }
  /* 002 Bsic ToDo End  */
 
+
+ /* 003 Age Calculator Start  */
+
+ /* 003 Age Calculator End  */
+
  
-/* 003 Product ToDo with LocalStorage Start */
-/* *{
-margin: 200px auto;
-} */
+/* 004 Product ToDo with LocalStorage Start */
 
 .productAddBox{
     display: none;
-    
 }
 
 .regular_price {
 	text-decoration: line-through;
-    
 }
-/* 003 Product ToDo with LocalStorage End */
+.card{
+    border-radius : .5rem;
+}
+.card-img{
+    border-radius : .5rem;
+}
+/* 004 Product ToDo with LocalStorage End */
 
+/* 005 Tesm Member with LocalStorage Start */
+
+.teamMember .form-control {
+    height: calc(1em + 0.75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+}
+.teamMember label {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+.team-so-ic {
+    list-style: none;
+}
+ul.team-so-ic li {
+    display: inline;
+    margin-right: 10px;
+}
+ul.team-so-ic li a{
+    text-decoration: none;
+}
+.teamMember .teamMembers .list-group-item {
+    padding: 5px 7px;
+    line-height: 14px;
+    margin-bottom: 14px;
+}
+h3.bborder {
+    padding-bottom: 8px;
+    border-bottom: 1px solid greenyellow;
+}
+.card-body.devs-card {
+    padding: 0.75rem;
+}
+p.devs-gender {
+    margin-bottom: 5px;
+}
+/* 005 Tesm Member with LocalStorage End */
