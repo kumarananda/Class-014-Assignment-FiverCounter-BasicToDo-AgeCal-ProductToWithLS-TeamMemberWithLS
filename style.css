@@ -49,6 +49,9 @@
 
 
  /* 003 Age Calculator Start  */
+ .ageCalSection .card {
+	background: #ce4fb4;
+}
 
  /* 003 Age Calculator End  */
 
@@ -68,7 +71,13 @@
 .card-img{
     border-radius : .5rem;
 }
+.product .card {
+	background-color: #b775b3;
+}
 /* 004 Product ToDo with LocalStorage End */
+.card.productAddBox {
+	background-color: #667b2b;
+}
 
 /* 005 Tesm Member with LocalStorage Start */
 
@@ -94,10 +103,14 @@ ul.team-so-ic li {
 ul.team-so-ic li a{
     text-decoration: none;
 }
+.teamMemberADD {
+	background-color: #35ffe3;
+}
 .teamMember .teamMembers .list-group-item {
-    padding: 5px 7px;
-    line-height: 14px;
-    margin-bottom: 14px;
+	padding: 5px 7px;
+	line-height: 14px;
+	margin-bottom: 14px;
+	color: #10592c;
 }
 h3.bborder {
     padding-bottom: 8px;
@@ -108,5 +121,8 @@ h3.bborder {
 }
 p.devs-gender {
     margin-bottom: 5px;
+}
+.card-body.devs-card {
+	background-color: #74d974;
 }
 /* 005 Tesm Member with LocalStorage End */

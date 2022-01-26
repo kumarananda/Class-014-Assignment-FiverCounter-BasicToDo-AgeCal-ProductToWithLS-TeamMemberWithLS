@@ -27,7 +27,7 @@ ageSubmit.addEventListener('submit', function (e) {
     const ageBirthDate = document.getElementById('ageBirthDate').value;
     const ageCurrentDate = document.getElementById('ageCurrentDate').value;
 
-console.log(ageName + " " + ageBirthDate + " " + ageCurrentDate);
+    console.log(ageName + " " + ageBirthDate + " " + ageCurrentDate);
 
     if(ageName == "" || ageBirthDate == "" || ageCurrentDate == ""){
         ageInputMess.innerHTML = `
