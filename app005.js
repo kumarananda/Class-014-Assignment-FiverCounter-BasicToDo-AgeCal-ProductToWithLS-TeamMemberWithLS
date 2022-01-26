@@ -55,7 +55,15 @@ devsform.addEventListener('submit', function (e) {
 
 allDevs();
 function allDevs(){
-    let all_devs = getItemFromLS('devs');
+
+    //provlems solved with support
+    let all_devs;
+
+    if( getItemFromLS('devs') ){
+        all_devs = getItemFromLS('devs');
+    }else{
+        all_devs= [];
+    }
     
     let data = '';
     all_devs.map(d => {

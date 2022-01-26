@@ -2,9 +2,7 @@
 
 // 003 Age Calculator start
 
-const ageName = document.getElementById('ageName').value;
-const ageBirthDate = document.getElementById('ageBirthDate').value;
-const ageCurrentDate = document.getElementById('ageCurrentDate').value;
+
 
 const ageSubmit = document.getElementById('ageSubmit');
 const ageResult = document.getElementById('ageResult');
@@ -24,6 +22,12 @@ ageNamegg.addEventListener('blur', () => {
 
 ageSubmit.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    const ageName = document.getElementById('ageName').value;
+    const ageBirthDate = document.getElementById('ageBirthDate').value;
+    const ageCurrentDate = document.getElementById('ageCurrentDate').value;
+
+console.log(ageName + " " + ageBirthDate + " " + ageCurrentDate);
 
     if(ageName == "" || ageBirthDate == "" || ageCurrentDate == ""){
         ageInputMess.innerHTML = `
